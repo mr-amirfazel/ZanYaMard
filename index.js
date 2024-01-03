@@ -1,17 +1,24 @@
+/*
+    getting input and buttons from dom
+*/
 const name_input = document.getElementById('nameInput');
 const [save_button, submit_button, clear_button] = document.querySelectorAll('button')
 const [female_radio, male_radio] = document.querySelectorAll("input[type=radio]")
-
+/*
+    getting elements to manipulate later from dom
+*/
 const prediction_container = document.getElementsByClassName('prediction_value')[0]
 const error_container = document.getElementsByClassName("error")[0]
 const saved_container = document.getElementById('saved_container')
 const loader = document.getElementsByClassName('loader')[0]
 
+
+//  defining var for input value
 let name_value = name_input.getAttribute("value")
 
 
-console.log(name_input, save_button, submit_button, clear_button, male_radio, female_radio);
 
+// setting default vlaues to some elements
 const init = () => {
     clear_button.disabled = true
     name_input.setAttribute("value", "");
@@ -21,18 +28,23 @@ const init = () => {
     loader.classList.toggle("hide");
 }
 
+// stroing data in local storage
 const store_data = (key, value) => {
     window.localStorage.setItem(key, value)
 }
 
+// getting data from local storage
 const load_data = (key) => {
     return window.localStorage.getItem(key)
 }
 
+// removing data from local storage
 const remove_data = (key) => {
     window.localStorage.removeItem(key)
 }
 
+
+// fetching data from external api, handling different situations and showing appropriate data
 const fetch_data = () => {
     loader.classList.toggle('hide')
     fetch(`https://api.genderize.io/?name=${name_value}`)
@@ -52,15 +64,14 @@ const fetch_data = () => {
         })
 }
 
-const validate_data = (data) => {
-    let data_name = data.trim()
-    return data_name.length > 0
-}
 
+//  updating the name value after every change on the input element value
 name_input.onchange = (e) => {
     name_value = e.target.value;
 }
 
+
+// saving the name along with the users guess in local storage
 save_button.onclick = () => {
     console.log(male_radio, female_radio);
     console.log(male_radio.checked, female_radio.checked);
@@ -69,12 +80,13 @@ save_button.onclick = () => {
         user_choice = 'male'
     else
         user_choice = 'female'
-
-
-    console.log(name_value, user_choice);
     store_data(name_value, user_choice)
 }
 
+// submit logic:
+// - emptying message and input value
+// - fetching request
+// - showing users saved guess if available
 submit_button.onclick = () => {
     prediction_container.innerHTML = "";
     error_container.innerHTML = "";
@@ -82,23 +94,22 @@ submit_button.onclick = () => {
 
 
     let saved_data = load_data(name_value)
-    console.log('saved', saved_data, name_value);
     if (saved_data) {
         clear_button.disabled = false
-        console.log(saved_container);
         saved_container.innerHTML = `<p>you gussed ${name_value} to be a <strong>${saved_data}</strong></p>`
 
     }
     fetch_data()
-
-
-
 }
 
+
+// removing users guess from local storage and giving the appropriate message
 clear_button.onclick = () => {
     saved_container.innerHTML = `<p><strong>${name_value}</strong> removed from local storage`
     remove_data(name_value)
     clear_button.disabled = true
 }
 
+
+// calling the init function
 init();
