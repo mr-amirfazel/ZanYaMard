@@ -1,0 +1,135 @@
+@import url('./radio.css');
+@import url('./button.css');
+@import url('./input.css');
+@import url('./hamster.css');
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url("../assets/bg.png") no-repeat center fixed;
+  background-size: cover;
+  font-family: "Times New Roman", Times, serif;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  color: azure;
+  font-weight: 500;
+  width: 50%;
+  min-width: fit-content;
+  height: 90%;
+  border: rgb(248, 160, 28) 3px solid;
+  border-radius: 30% 60px 80px 10%;
+  background-color: rgba(180, 120, 195, 0.274);
+  overflow-x: hidden;
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+  /* flex-direction: column; */
+}
+
+.app > header {
+  font-weight: bold;
+  color: rgb(252, 186, 6);
+  text-align: center;
+  background: rgb(6, 204, 236);
+  background: linear-gradient(
+    62deg,
+    rgba(6, 204, 236, 1) 0%,
+    rgba(87, 15, 222, 1) 64%,
+    rgba(128, 0, 255, 1) 100%
+  );
+  font-size: 2rem;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app > footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background: rgb(6, 204, 236);
+  background: linear-gradient(
+    62deg,
+    rgba(6, 204, 236, 1) 0%,
+    rgba(87, 15, 222, 1) 64%,
+    rgba(128, 0, 255, 1) 100%
+  );
+  color: gold;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+footer > a {
+  text-decoration: none;
+  color: gold;
+}
+
+.content {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  gap: 2rem;
+}
+
+.form {
+  height: 100%;
+  width: 50%;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.result {
+  width: 50%;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+.prediction {
+  height: 50%;
+}
+
+.saved {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.error{
+  color: red;
+  font-weight: 800;
+}
+
+.hide{
+  display: none;
+}
+.prediction_value{
+  color: gold;
+}
+.prob{
+  font-weight: bold;
+}

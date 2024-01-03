@@ -1,0 +1,140 @@
+button {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+   }
+   
+   .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+   }
+   
+   .edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+       to left,
+       hsl(136.25deg 94.96% 18.42%) 0%,
+       hsl(131.82deg 67.87% 33.77%) 8%,
+       hsl(122.95deg 51.24% 32.07%) 92%,
+       hsl(105.23deg 95.62% 17.39%) 100%
+     );
+   }
+   
+   .front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(345deg 100% 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform
+       600ms
+       cubic-bezier(.3, .7, .4, 1);
+   }
+
+   .save .front{
+    background: hsl(131, 55%, 59%);
+   }
+   button:nth-child(3) .edge{
+    background: linear-gradient(
+    to left,
+    hsl(311, 100%, 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+   }
+
+
+   button:disabled{
+    cursor: not-allowed;
+   }
+
+   button:nth-child(2) .edge{
+    background: linear-gradient(
+    to left,
+    hsl(323, 80%, 23%) 0%,
+    hsl(313, 87%, 31%) 8%,
+    hsl(313, 87%, 31%) 8%,
+    hsl(340deg 100% 16%) 100%
+  );
+   }
+   .submit .front{
+    background: hsl(292, 48%, 54%);
+   }
+   
+   button:hover {
+    filter: brightness(110%);
+   }
+   button:disabled:hover{
+    filter: none;
+   }
+   
+   button:hover .front {
+    transform: translateY(-6px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+
+   button:disabled:hover .front {
+    transform: none;
+    transition: none;
+   }
+   
+   button:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+   }
+
+   button:disabled:active .front {
+    transform: none;
+    transition: none;
+   }
+   
+   button:hover .shadow {
+    transform: translateY(4px);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+
+   button:disabled:hover .shadow {
+    transform: scale(1);
+    transition: transform
+       250ms
+       cubic-bezier(.3, .7, .4, 1.5);
+   }
+   
+   button:active .shadow {
+    transform: none;
+    transition: none;
+   }
+   
+   button:focus:not(:focus-visible) {
+    outline: none;
+   }
