@@ -30,7 +30,8 @@ main {
 
 /* 
 setting basic styles like positioning in rows, font, color, over-flow management, w, h and bg color for app container
-
+curving the box using border-radius
+giving scroll ability on when overflow on y axis is happened
 */
 
 .app {
