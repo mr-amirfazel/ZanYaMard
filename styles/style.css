@@ -2,6 +2,10 @@
 @import url('./button.css');
 @import url('./input.css');
 @import url('./hamster.css');
+
+/* 
+  giving full w,h to whole body and setting bg photo
+*/
 body {
   width: 100vw;
   height: 100vh;
@@ -12,6 +16,9 @@ body {
   font-family: "Times New Roman", Times, serif;
 }
 
+/* 
+  positioning elements in the main tag
+*/
 main {
   width: 100%;
   height: 100%;
@@ -19,6 +26,12 @@ main {
   justify-content: center;
   align-items: center;
 }
+
+
+/* 
+setting basic styles like positioning in rows, font, color, over-flow management, w, h and bg color for app container
+
+*/
 
 .app {
   color: azure;
@@ -36,6 +49,11 @@ main {
   /* flex-direction: column; */
 }
 
+/* 
+  styles for app header (which is in the side rn),
+  setting bg colors fonts, element positioning and etc 
+
+*/
 .app > header {
   font-weight: bold;
   color: rgb(252, 186, 6);
@@ -54,6 +72,11 @@ main {
   align-items: center;
 }
 
+
+/* 
+  setting footer styles, fonts, colors and sticking it to the bottom of app using postion: absolute and bottom: 0 
+*/
+
 .app > footer {
   position: absolute;
   bottom: 0;
@@ -70,10 +93,20 @@ main {
   width: 100%;
 }
 
+
+/* 
+  styling footer link so it wont be ugly and blue with underlines
+*/
+
 footer > a {
   text-decoration: none;
   color: gold;
 }
+
+
+/* 
+  setting w,h and gap for elements in  content of the app (main part)
+*/
 
 .content {
   width: 100%;
@@ -82,6 +115,11 @@ footer > a {
   gap: 2rem;
 }
 
+
+/* 
+  setting styles, positioning in columns, spaces for the form
+
+*/
 .form {
   height: 100%;
   width: 50%;
@@ -92,6 +130,11 @@ footer > a {
   justify-content: space-between;
 }
 
+
+/* 
+  setting styles, positioning in columns, spaces for the result section
+
+*/
 .result {
   width: 50%;
   padding: 1.5rem;
@@ -101,11 +144,16 @@ footer > a {
   justify-content: space-evenly;
 }
 
-
+/* 
+  giving the prediction section half of the column
+*/
 .prediction {
   height: 50%;
 }
 
+/* 
+  giving the saved section half of the column and streching its elements in space-evenly way
+*/
 .saved {
   height: 50%;
   display: flex;
@@ -113,23 +161,38 @@ footer > a {
   justify-content: space-evenly;
 }
 
+/* 
+  giving some space and positioning buttons in the form section
+
+*/
+
 .buttons {
   display: flex;
   flex-direction: column;
   gap: 13px;
 }
 
+/* 
+  proper styles for the error message
+*/
 .error{
   color: red;
   font-weight: 800;
 }
 
+/* 
+  proper styles for the hiding elements
+*/
 .hide{
   display: none;
 }
+
+/* color for when we fetch prediction value */
 .prediction_value{
   color: gold;
 }
+
+/* font styles for the probability value shown after fetch */
 .prob{
   font-weight: bold;
 }

@@ -1,4 +1,8 @@
 
+/* 
+    this file contains styles for radio buttons with nice UI
+*/
+
 .radio-inputs {
     display: flex;
     justify-content: center;

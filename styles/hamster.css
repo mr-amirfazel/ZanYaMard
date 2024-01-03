@@ -1,3 +1,7 @@
+/* 
+    this file contains css styles for the hamster loader
+*/
+
 .wheel-and-hamster {
     --dur: 1s;
     position: relative;
@@ -160,7 +164,10 @@
           linear-gradient(hsla(0,0%,55%,0) 46.9%,hsl(0,0%,65%) 47% 52.9%,hsla(0,0%,65%,0) 53%) 50% 50% / 99% 99% no-repeat;
   }
   
-  /* Animations */
+  /* 
+  Animations created for the hamser using the keyframe
+  
+  */
   @keyframes hamster {
     from, to {
       transform: rotate(4deg) translate(-0.8em,1.85em);
