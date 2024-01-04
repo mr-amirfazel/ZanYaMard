@@ -53,6 +53,12 @@ using blur to give bg some glass effect
   /* flex-direction: column; */
 }
 
+
+/* setting every h3 tags color in app to gold for better ui */
+.app > h3{
+  color: gold;
+}
+
 /* 
   styles for app header (which is in the side rn),
   setting bg colors fonts, element positioning and etc 
