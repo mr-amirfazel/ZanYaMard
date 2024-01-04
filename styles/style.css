@@ -55,7 +55,7 @@ using blur to give bg some glass effect
 
 
 /* setting every h3 tags color in app to gold for better ui */
-.app > h3{
+.app  h3{
   color: gold;
 }
 
