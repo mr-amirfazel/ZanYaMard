@@ -1,7 +1,7 @@
-@import url('./radio.css');
-@import url('./button.css');
-@import url('./input.css');
-@import url('./hamster.css');
+@import url("./radio.css");
+@import url("./button.css");
+@import url("./input.css");
+@import url("./hamster.css");
 
 /* 
   giving full w,h to whole body and setting bg photo
@@ -27,11 +27,11 @@ main {
   align-items: center;
 }
 
-
 /* 
 setting basic styles like positioning in rows, font, color, over-flow management, w, h and bg color for app container
 curving the box using border-radius
 giving scroll ability on when overflow on y axis is happened
+using blur to give bg some glass effect
 */
 
 .app {
@@ -41,8 +41,11 @@ giving scroll ability on when overflow on y axis is happened
   min-width: fit-content;
   height: 90%;
   border: rgb(248, 160, 28) 3px solid;
-  border-radius: 30% 60px 80px 10%;
-  background-color: rgba(180, 120, 195, 0.274);
+  border-radius: 20% 26px 28px 10%;
+  background: rgba(74, 153, 233, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
   overflow-x: hidden;
   position: relative;
   overflow-y: auto;
@@ -73,7 +76,6 @@ giving scroll ability on when overflow on y axis is happened
   align-items: center;
 }
 
-
 /* 
   setting footer styles, fonts, colors and sticking it to the bottom of app using postion: absolute and bottom: 0 
 */
@@ -94,7 +96,6 @@ giving scroll ability on when overflow on y axis is happened
   width: 100%;
 }
 
-
 /* 
   styling footer link so it wont be ugly and blue with underlines
 */
@@ -103,7 +104,6 @@ footer > a {
   text-decoration: none;
   color: gold;
 }
-
 
 /* 
   setting w,h and gap for elements in  content of the app (main part)
@@ -115,7 +115,6 @@ footer > a {
   display: flex;
   gap: 2rem;
 }
-
 
 /* 
   setting styles, positioning in columns, spaces for the form
@@ -130,7 +129,6 @@ footer > a {
   gap: 3rem;
   justify-content: space-between;
 }
-
 
 /* 
   setting styles, positioning in columns, spaces for the result section
@@ -176,7 +174,7 @@ footer > a {
 /* 
   proper styles for the error message
 */
-.error{
+.error {
   color: red;
   font-weight: 800;
 }
@@ -184,16 +182,16 @@ footer > a {
 /* 
   proper styles for the hiding elements
 */
-.hide{
+.hide {
   display: none;
 }
 
 /* color for when we fetch prediction value */
-.prediction_value{
+.prediction_value {
   color: gold;
 }
 
 /* font styles for the probability value shown after fetch */
-.prob{
+.prob {
   font-weight: bold;
 }
