@@ -164,6 +164,8 @@ footer > a {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  border: 2px yellow dashed;
+  padding: 10px;
 }
 
 /* 
