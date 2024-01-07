@@ -38,7 +38,8 @@ using blur to give bg some glass effect
   color: azure;
   font-weight: 500;
   width: 50%;
-  min-width: fit-content;
+  max-width: 50%;
+  /* min-width: fit-content; */
   height: 90%;
   border: rgb(248, 160, 28) 3px solid;
   border-radius: 20% 26px 28px 10%;
@@ -142,6 +143,7 @@ footer > a {
 */
 .result {
   width: 50%;
+  max-width: 50%;
   padding: 1.5rem;
   height: 100%;
   display: flex;

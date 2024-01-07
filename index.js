@@ -44,8 +44,26 @@ const remove_data = (key) => {
 }
 
 
+// this function validates data being passed to api call
+//  checking its:
+//  - non-emptiness
+//  - length (although its checked in html as well)
+//  - regex conditions (although its checked in html as well)
+const validate_data = () => {
+    const isEmpty = name_value.trim() == "";
+
+    const lencheck = name_value.length <= 255;
+
+    const regexCheck = /[A-Za-z]+/.test(name_value)
+
+    return !isEmpty && lencheck && regexCheck;
+}
+
+
 // fetching data from external api, handling different situations and showing appropriate data
 const fetch_data = () => {
+
+    
     loader.classList.toggle('hide')
     fetch(`https://api.genderize.io/?name=${name_value}`)
         .then(data => data.json())
@@ -94,12 +112,22 @@ submit_button.onclick = () => {
 
 
     let saved_data = load_data(name_value)
+    name_value = name_input.value
+    if (validate_data())
+        {
+            fetch_data()
+        }
+    else
+        {
+        error_container.innerHTML = `please provide correct info`
+        // name_value = ""
+        return
+    }
     if (saved_data) {
         clear_button.disabled = false
         saved_container.innerHTML = `<p>you gussed ${name_value} to be a <strong>${saved_data}</strong></p>`
-
     }
-    fetch_data()
+    
 }
 
 
